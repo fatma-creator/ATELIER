@@ -19,23 +19,27 @@ public class ClientService implements IClientService {
     }
 
     @Override
+    public List<Client> addClients(List<Client> clients) {
+        return clientRepository.saveAll(clients);
+    }
+
+    @Override
     public Client updateClient(Client client) {
         return clientRepository.save(client);
     }
 
     @Override
-    public Client getClientById(Long id) {
+    public Client retrieveClient(long id) {
         return clientRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<Client> getAllClients() {
+    public List<Client> retrieveAllClients() {
         return clientRepository.findAll();
     }
 
     @Override
-    public void deleteClient(Long id) {
+    public void removeClient(long id) {
         clientRepository.deleteById(id);
     }
-
 }

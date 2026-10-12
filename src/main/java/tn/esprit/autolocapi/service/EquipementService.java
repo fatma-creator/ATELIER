@@ -19,22 +19,27 @@ public class EquipementService implements IEquipementService {
     }
 
     @Override
+    public List<Equipement> addEquipements(List<Equipement> equipements) {
+        return equipementRepository.saveAll(equipements);
+    }
+
+    @Override
     public Equipement updateEquipement(Equipement equipement) {
         return equipementRepository.save(equipement);
     }
 
     @Override
-    public Equipement getEquipementById(Long id) {
+    public Equipement retrieveEquipement(long id) {
         return equipementRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<Equipement> getAllEquipements() {
+    public List<Equipement> retrieveAllEquipements() {
         return equipementRepository.findAll();
     }
 
     @Override
-    public void deleteEquipement(Long id) {
+    public void removeEquipement(long id) {
         equipementRepository.deleteById(id);
     }
 }

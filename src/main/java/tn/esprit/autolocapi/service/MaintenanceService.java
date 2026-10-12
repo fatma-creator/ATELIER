@@ -19,22 +19,27 @@ public class MaintenanceService implements IMaintenanceService {
     }
 
     @Override
+    public List<Maintenance> addMaintenances(List<Maintenance> maintenances) {
+        return maintenanceRepository.saveAll(maintenances);
+    }
+
+    @Override
     public Maintenance updateMaintenance(Maintenance maintenance) {
         return maintenanceRepository.save(maintenance);
     }
 
     @Override
-    public Maintenance getMaintenanceById(Long id) {
+    public Maintenance retrieveMaintenance(long id) {
         return maintenanceRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<Maintenance> getAllMaintenances() {
+    public List<Maintenance> retrieveAllMaintenances() {
         return maintenanceRepository.findAll();
     }
 
     @Override
-    public void deleteMaintenance(Long id) {
+    public void removeMaintenance(long id) {
         maintenanceRepository.deleteById(id);
     }
 }

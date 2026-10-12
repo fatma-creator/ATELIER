@@ -19,22 +19,27 @@ public class ContratService implements IContratService {
     }
 
     @Override
+    public List<Contrat> addContrats(List<Contrat> contrats) {
+        return contratRepository.saveAll(contrats);
+    }
+
+    @Override
     public Contrat updateContrat(Contrat contrat) {
         return contratRepository.save(contrat);
     }
 
     @Override
-    public Contrat getContratById(Long id) {
+    public Contrat retrieveContrat(long id) {
         return contratRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<Contrat> getAllContrats() {
+    public List<Contrat> retrieveAllContrats() {
         return contratRepository.findAll();
     }
 
     @Override
-    public void deleteContrat(Long id) {
+    public void removeContrat(long id) {
         contratRepository.deleteById(id);
     }
 }

@@ -19,22 +19,27 @@ public class AgenceService implements IAgenceService {
     }
 
     @Override
+    public List<Agence> addAgences(List<Agence> agences) {
+        return agenceRepository.saveAll(agences);
+    }
+
+    @Override
     public Agence updateAgence(Agence agence) {
         return agenceRepository.save(agence);
     }
 
     @Override
-    public Agence getAgenceById(Long id) {
+    public Agence retrieveAgence(long id) {
         return agenceRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<Agence> getAllAgences() {
+    public List<Agence> retrieveAllAgences() {
         return agenceRepository.findAll();
     }
 
     @Override
-    public void deleteAgence(Long id) {
+    public void removeAgence(long id) {
         agenceRepository.deleteById(id);
     }
 }

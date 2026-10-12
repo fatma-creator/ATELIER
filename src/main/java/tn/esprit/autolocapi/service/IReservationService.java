@@ -8,11 +8,13 @@ public interface IReservationService {
 
     Reservation addReservation(Reservation reservation);
 
+    List<Reservation> addReservations(List<Reservation> reservations);
+
     Reservation updateReservation(Reservation reservation);
 
-    Reservation getReservationById(Long id);
+    Reservation retrieveReservation(long id);
 
-    List<Reservation> getAllReservations();
+    List<Reservation> retrieveAllReservations();
 
-    void deleteReservation(Long id);
+    void removeReservation(long id);
 }

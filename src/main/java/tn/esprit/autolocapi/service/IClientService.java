@@ -8,12 +8,13 @@ public interface IClientService {
 
     Client addClient(Client client);
 
+    List<Client> addClients(List<Client> clients);
+
     Client updateClient(Client client);
 
-    Client getClientById(Long id);
+    Client retrieveClient(long id);
 
-    List<Client> getAllClients();
+    List<Client> retrieveAllClients();
 
-    void deleteClient(Long id);
-
+    void removeClient(long id);
 }

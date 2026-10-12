@@ -8,11 +8,13 @@ public interface IAgenceService {
 
     Agence addAgence(Agence agence);
 
+    List<Agence> addAgences(List<Agence> agences);
+
     Agence updateAgence(Agence agence);
 
-    Agence getAgenceById(Long id);
+    Agence retrieveAgence(long id);
 
-    List<Agence> getAllAgences();
+    List<Agence> retrieveAllAgences();
 
-    void deleteAgence(Long id);
+    void removeAgence(long id);
 }

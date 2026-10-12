@@ -8,11 +8,13 @@ public interface IMaintenanceService {
 
     Maintenance addMaintenance(Maintenance maintenance);
 
+    List<Maintenance> addMaintenances(List<Maintenance> maintenances);
+
     Maintenance updateMaintenance(Maintenance maintenance);
 
-    Maintenance getMaintenanceById(Long id);
+    Maintenance retrieveMaintenance(long id);
 
-    List<Maintenance> getAllMaintenances();
+    List<Maintenance> retrieveAllMaintenances();
 
-    void deleteMaintenance(Long id);
+    void removeMaintenance(long id);
 }

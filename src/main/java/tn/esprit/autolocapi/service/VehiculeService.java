@@ -19,22 +19,27 @@ public class VehiculeService implements IVehiculeService {
     }
 
     @Override
+    public List<Vehicule> addVehicules(List<Vehicule> vehicules) {
+        return vehiculeRepository.saveAll(vehicules);
+    }
+
+    @Override
     public Vehicule updateVehicule(Vehicule vehicule) {
         return vehiculeRepository.save(vehicule);
     }
 
     @Override
-    public Vehicule getVehiculeById(Long id) {
+    public Vehicule retrieveVehicule(long id) {
         return vehiculeRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<Vehicule> getAllVehicules() {
+    public List<Vehicule> retrieveAllVehicules() {
         return vehiculeRepository.findAll();
     }
 
     @Override
-    public void deleteVehicule(Long id) {
+    public void removeVehicule(long id) {
         vehiculeRepository.deleteById(id);
     }
 }

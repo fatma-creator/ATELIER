@@ -8,11 +8,13 @@ public interface IEquipementService {
 
     Equipement addEquipement(Equipement equipement);
 
+    List<Equipement> addEquipements(List<Equipement> equipements);
+
     Equipement updateEquipement(Equipement equipement);
 
-    Equipement getEquipementById(Long id);
+    Equipement retrieveEquipement(long id);
 
-    List<Equipement> getAllEquipements();
+    List<Equipement> retrieveAllEquipements();
 
-    void deleteEquipement(Long id);
+    void removeEquipement(long id);
 }

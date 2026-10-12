@@ -19,22 +19,27 @@ public class EmployeService implements IEmployeService {
     }
 
     @Override
+    public List<Employe> addEmployes(List<Employe> employes) {
+        return employeRepository.saveAll(employes);
+    }
+
+    @Override
     public Employe updateEmploye(Employe employe) {
         return employeRepository.save(employe);
     }
 
     @Override
-    public Employe getEmployeById(Long id) {
+    public Employe retrieveEmploye(long id) {
         return employeRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<Employe> getAllEmployes() {
+    public List<Employe> retrieveAllEmployes() {
         return employeRepository.findAll();
     }
 
     @Override
-    public void deleteEmploye(Long id) {
+    public void removeEmploye(long id) {
         employeRepository.deleteById(id);
     }
 }

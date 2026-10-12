@@ -8,11 +8,13 @@ public interface IVehiculeService {
 
     Vehicule addVehicule(Vehicule vehicule);
 
+    List<Vehicule> addVehicules(List<Vehicule> vehicules);
+
     Vehicule updateVehicule(Vehicule vehicule);
 
-    Vehicule getVehiculeById(Long id);
+    Vehicule retrieveVehicule(long id);
 
-    List<Vehicule> getAllVehicules();
+    List<Vehicule> retrieveAllVehicules();
 
-    void deleteVehicule(Long id);
+    void removeVehicule(long id);
 }

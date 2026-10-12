@@ -8,11 +8,13 @@ public interface IEmployeService {
 
     Employe addEmploye(Employe employe);
 
+    List<Employe> addEmployes(List<Employe> employes);
+
     Employe updateEmploye(Employe employe);
 
-    Employe getEmployeById(Long id);
+    Employe retrieveEmploye(long id);
 
-    List<Employe> getAllEmployes();
+    List<Employe> retrieveAllEmployes();
 
-    void deleteEmploye(Long id);
+    void removeEmploye(long id);
 }

@@ -8,11 +8,13 @@ public interface IPaiementService {
 
     Paiement addPaiement(Paiement paiement);
 
+    List<Paiement> addPaiements(List<Paiement> paiements);
+
     Paiement updatePaiement(Paiement paiement);
 
-    Paiement getPaiementById(Long id);
+    Paiement retrievePaiement(long id);
 
-    List<Paiement> getAllPaiements();
+    List<Paiement> retrieveAllPaiements();
 
-    void deletePaiement(Long id);
+    void removePaiement(long id);
 }
